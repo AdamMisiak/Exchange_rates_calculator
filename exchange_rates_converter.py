@@ -13,7 +13,7 @@ def calculate_multiple_exchange_rates():
     with open('Output.txt', mode='wt') as result:
         for date in dates:
             date_in_datetime_format = datetime.datetime.strptime(date[0], '%d.%m.%Y')
-            date_prev_day = date_in_datetime_format - datetime.timedelta(days=1)
+            date_prev_day = date_in_datetime_format - datetime.timedelta(days=1) #take rate from day before dividend payout day
             date_converted = date_prev_day.strftime('%Y-%m-%d')
 
             if date[1] == 'XTB': #do not calculate rates for XTB broker
