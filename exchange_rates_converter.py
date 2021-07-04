@@ -25,7 +25,7 @@ def calculate_exchange_rates(date_in_string_format, date_in_datetime_format, cur
     url = URL_BASE + date_in_string_format
     response = requests.get(url, {'format': 'api'})
 
-    while response.status_code == 404:
+    while response.status_code == 404: #this day is holiday/weekend, take previous day 
         date_in_datetime_format = date_in_datetime_format - datetime.timedelta(days=1)
         date_in_string_format = date_in_datetime_format.strftime('%Y-%m-%d')
 
