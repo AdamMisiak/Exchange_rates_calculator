@@ -5,7 +5,7 @@ def convert_dates_format():
     with open("Dates.txt", "r") as file:
         lines = file.read().splitlines()
         for line in lines:
-            dates.append(datetime.strptime(line, '%d.%m.%Y').strftime("%m/%d/%Y"))
+            dates.append(datetime.strptime(line, '%d.%m.%Y').strftime("%d-%m-%Y"))
     print(dates)
 
 
